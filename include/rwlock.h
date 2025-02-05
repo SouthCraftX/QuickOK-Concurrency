@@ -30,6 +30,16 @@ qo_rwlock_wrlock(
     QO_RWLock * p_lock
 ) QO_NONNULL(1);
 
+qo_bool_t
+qo_rwlock_try_rdlock(
+    QO_RWLock * p_lock
+) QO_NONNULL(1);
+
+qo_bool_t
+qo_rwlock_try_wrlock(
+    QO_RWLock * p_lock
+) QO_NONNULL(1);
+
 void
 qo_rwlock_unlock(
     QO_RWLock * p_lock

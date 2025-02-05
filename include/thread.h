@@ -68,7 +68,7 @@ qo_thread_suspend_self(
     qo_size_t       milliseconds
 );
 
-void
+qo_stat_t
 qo_thread_kill(
     QO_Thread *     p_thread
 ) QO_NONNULL(1);
@@ -94,3 +94,9 @@ qo_thread_get_exit_code(
 #if defined(__cplusplus)
 }
 #endif // __cplusplus
+
+#if QO_PLATFORM(POSIX)
+#   include "internal/platform_spec/posix/thread.h"
+#elif QO_PLATFORM(WINDOWS)
+#   include "internal/platform_spec/win32/thread.h"
+#endif // QO_PLATFORM

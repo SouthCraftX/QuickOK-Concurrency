@@ -55,6 +55,22 @@ qo_process_exit_self(
     qo_stat_t  status
 );
 
+void
+qo_process_dismiss(
+    QO_Process *    p_process
+);
+
+qo_stat_t
+qo_process_get_thread_count(
+    QO_Process *    p_process ,
+    qo_uint32_t *   p_count
+) QO_NONNULL(1 , 2);
+
+qo_stat_t
+qo_set_env(
+    qo_ccstring_t  key ,
+    qo_ccstring_t  value
+) QO_NONNULL(1 , 2);
 
 #if defined(__cplusplus)
 }
